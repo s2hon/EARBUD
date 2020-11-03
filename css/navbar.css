@@ -1,7 +1,17 @@
+.button {
+    background-color: #1bf2cb;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.menu {
+    background-image: linear-gradient(to left, #bd21bf, #80c7f2);
+    font-family: 'Orbitron', sans-serif;
+    padding: 1.5rem;
+    font-size: larger;
+}
+
 .top-bar {
     background-image: linear-gradient(to right, #bd21bf, #80c7f2);
-};
-
-.button {
-    background-color: #bd21bf;
+    padding: 2rem;
 }
+
