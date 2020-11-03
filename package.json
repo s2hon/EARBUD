@@ -1,5 +1,5 @@
 {
-  "name": "EARBUD",
+  "name": "earbud",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/s2hon/EARBUD#readme",
   "dependencies": {
+    "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
-  }
+  },
+  "devDependencies": {}
 }
