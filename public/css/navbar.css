@@ -3,7 +3,7 @@
     font-family: 'Orbitron', sans-serif;
 }
 
-.menu {
+.navbar {
     background-image: linear-gradient(to left, #bd21bf, #80c7f2);
     font-family: 'Orbitron', sans-serif;
     padding: 1.5rem;
@@ -16,3 +16,9 @@
     padding: 2rem;
 }
 
+@include dropdown-container;
+
+form.signup,
+form.login {
+  margin-top: 50px;
+}
