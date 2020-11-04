@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
-    const Review = sequelize.define("review", {
+    const Review = sequelize.define("Review", {
         song: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 min: 1,
@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         artist: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 min: 1,
@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         album: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull: true,
             validate: {
                 min: 1,
@@ -40,7 +40,7 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         rating: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             len: [1],
             validate: {

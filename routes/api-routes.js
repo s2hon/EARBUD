@@ -29,6 +29,18 @@ module.exports = function(app) {
       });
   });
 
+  app.post("/api/authors", function(req, res) {
+    db.User.create({
+      name: req.body.name
+    })
+      .then(function() {
+        res.redirect(307, "/api/authors");
+      })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
+  });
+
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
