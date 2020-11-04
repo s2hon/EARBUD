@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Yuel04Banh08",
-    "database": "review_db",
+    "database": "review_db", 
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
