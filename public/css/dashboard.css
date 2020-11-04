@@ -1,6 +1,9 @@
 .grid-x{
     background-image: linear-gradient(to bottom,#bd21bf, #80c7f2, #1bf2cb);
 }
-div, h3{
+body, h3{
     font-family:'Orbitron', sans-serif;
+}
+body{
+    background-color: #1bf2cb;
 }
