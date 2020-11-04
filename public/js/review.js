@@ -4,34 +4,20 @@ $(document).ready(function() {
     const artistInput = $("#artist");
     const albumInput = $("#album");
     const bodyInput = $("#body");
-    const rating = [];
-
-    //event listener for rating
-    $('input[type=radio]').change(function () {
-        if ($(this).is(':checked')) {
-            $(this).attr('checked', true);
-            rating.push($(this).siblings('value').text());
-        }
-    });
-
-    //event listener for being unchecked (health type)
-    $('input[type=radio]').change(function () {
-        if (!$(this).is(':checked')) {
-            $(this).removeAttr('checked', true);
-            var remove = $(this).siblings('value').text();
-            rating.splice($.inArray(remove, rating), 1);
-        }
-    });
 
     var reviewForm = $("#review");
     var authorSelect = $("#author");
 
-    $(reviewForm).on("submit", handleFormSubmit);
+    //need to put author selection
+    $.get("/api/user_data").then(function(data) {
+        $("#author").append("<option value='0'>"+data.username+"</option>");
+    });
 
+    $(reviewForm).on("submit", handleFormSubmit);
     // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
     const url = window.location.search;
     let postId;
-    let authorId;
+    // let authorId;
     // Sets a flag for whether or not we're updating a post to be false initially
     const updating = false;
 
@@ -41,10 +27,10 @@ $(document).ready(function() {
     postId = url.split("=")[1];
     getPostData(postId, "post");
     }
-    // Otherwise if we have an author_id in our url, preset the author select box to be our Author
-    else if (url.indexOf("?author_id=") !== -1) {
-    authorId = url.split("=")[1];
-    }
+    // // Otherwise if we have an author_id in our url, preset the author select box to be our Author
+    // else if (url.indexOf("?author_id=") !== -1) {
+    // authorId = url.split("=")[1];
+    // }
 
     // Getting the authors, and their posts
     // getAuthors();
@@ -77,7 +63,6 @@ $(document).ready(function() {
         }
     }
 
-    // Submits a new post and brings user to blog page upon completion
     function submitPost(post) {
         $.post("/api/review", post, function() {
             window.location.href = "/review";
