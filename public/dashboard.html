@@ -12,14 +12,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <!-- Compressed JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./favicon/cassette.ico">
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/dashboard.css">
-    <link rel="stylesheet" href="./css/review.css">
+    <link rel="stylesheet" href="./css/test.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
 </head>
@@ -49,26 +50,30 @@
 
     <div class="grid-x">
         <div class="cell small-1 medium-1 large-1"></div>
-            <div class="cell small-4 medium-4 large-4">
-                <h3>my saved songs</h3>
-                <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique adipisci, molestiae nobis
-                    rem
-                    expedita corporis in ducimus quibusdam aspernatur, eos beatae ex voluptas dolorem vero, sint unde
-                    alias
-                    consectetur explicabo?Eius praesentium ea, itaque temporibus officia esse tempora autem laboriosam
-                    inventore at unde commodi vel porro, possimus harum dicta rerum explicabo adipisci incidunt nisi.
-                    Repudiandae modi animi qui nesciunt! Assumenda.
-                </article>
-            </div>
+        <div class="cell small-10 medium-10 large-10">
+            <h3>my saved songs</h3>
+            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique adipisci, molestiae nobis
+                rem
+                expedita corporis in ducimus quibusdam aspernatur, eos beatae ex voluptas dolorem vero, sint unde
+                alias
+                consectetur explicabo?Eius praesentium ea, itaque temporibus officia esse tempora autem laboriosam
+                inventore at unde commodi vel porro, possimus harum dicta rerum explicabo adipisci incidunt nisi.
+                Repudiandae modi animi qui nesciunt! Assumenda.
+            </article>
+        </div>
+        <div class="cell small-1 medium-1 large-1"></div>
+
         
-            <div class="cell small-2 medium-2 large-2"></div>
-            <div class="cell small-4 medium-4 large-4">
-                <h3>my reviews</h3>
-                <article id="actualReview">
-                </article>
-            </div>
-            <div class="cell small-1 medium-1 large-1"></div>
-        
+
+    </div>
+    <div class="grid-x">
+        <div class="cell small-1 medium-1 large-1"></div>
+        <div class="cell small-10 medium-10 large-10">
+            <h3>my reviews</h3>
+            <article id="actualReview" class="grid-x">
+            </article>
+        </div>
+        <div class="cell small-1 medium-1 large-1"></div>
     </div>
 
     <footer>
@@ -123,8 +128,7 @@
         </form>
         </div>
     </footer>
-    
-        
+  
     <script>
         $(document).foundation();
     </script>
