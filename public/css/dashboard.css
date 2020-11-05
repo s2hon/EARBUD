@@ -1,12 +1,12 @@
 .grid-x{
     background-image: linear-gradient(to bottom,#bd21bf, #80c7f2, #1bf2cb);
 }
-body, h3{
+body, h3, h2{
     font-family:'Orbitron', sans-serif;
 }
 body{
     background-color: #1bf2cb;
 }
-#welcome{
+#welcome, h2, div{
     text-align: center;
 }
