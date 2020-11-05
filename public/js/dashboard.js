@@ -1,10 +1,5 @@
-function getReviews() {
-    $.get("/api/reviews", function (data) {
-        var rowsToAdd = [];
-        for (var i = 0; i < data.length; i++) {
-            rowsToAdd.push(createAuthorRow(data[i]));
-        }
-        renderAuthorList(rowsToAdd);
-        nameInput.val("");
+$(document).ready(function() {
+    $.get("/api/user_data").then(function(data) {
+      $(".user-name").text(data.username);
     });
-}
+});
