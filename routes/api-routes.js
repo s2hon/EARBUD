@@ -41,22 +41,6 @@ module.exports = function (app) {
     })
   });
 
-  // Route for getting review data to be used client side
-  app.get("/api/review", function (req, res) {
-    console.log(req.review);
-    if (!req.review) {
-      res.json({});
-    } else {
-      res.json({
-        song: req.review.song,
-        artist: req.review.artist,
-        album: req.review.album,
-        body: req.review.body,
-        rating: req.review.rating,
-        author: req.review.author
-      });
-    }
-  });
 
   //review function
   app.post("/api/review", function(req, res) {
