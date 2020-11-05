@@ -13,10 +13,12 @@ $(document).ready(function() {
         $("#author").append("<option value='1'>"+data.username+"</option>");
     });
 
-    $("#reviewsubmit").on("submit", handleFormSubmit);
+    const submit = document.getElementById('reviewsubmit');
+    $(submit).on("click", handleFormSubmit);
 
     // A function for handling what happens when the form to create a new post is submitted
     function handleFormSubmit(event) {
+        console.log("hello")
         event.preventDefault();
     // Wont submit the post if we are missing a body, title, or author
         if (!titleInput.val().trim() || !artistInput.val().trim() || !albumInput.val().trim() || !bodyInput.val().trim() || !ratingSelect.val() || !authorSelect.val()) {
