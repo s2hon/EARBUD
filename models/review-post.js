@@ -48,6 +48,10 @@ module.exports = function(sequelize, DataTypes) {
                     msg: 'Please rate the song'
                 }
             }
+        },
+        author: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     });
 

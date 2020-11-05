@@ -3,16 +3,23 @@
     font-family: 'Orbitron', sans-serif;
 }
 
+body {
+    background-color: #090126;
+    color: whitesmoke;
+}
+
 .navbar {
     background-image: linear-gradient(to left, #bd21bf, #80c7f2);
     font-family: 'Orbitron', sans-serif;
     padding: 1.5rem;
     font-size: larger;
     font-weight: bold;
+    color: whitesmoke;
 }
 
 .top-bar {
-    background-image: linear-gradient(to right, #bd21bf, #80c7f2);
+    /* background-image: linear-gradient(to right, #bd21bf, #80c7f2); */
+    background-color: #090126;
     padding: 2rem;
 }
 
@@ -39,6 +46,12 @@ form.login {
     font-family: 'orbitron', sans-serif;
 }
 
-.login-container {
+/* .login-container {
+    background-image: linear-gradient(180deg, white, #80c7f2);
+} */
+
+#review {
     background-image: linear-gradient(180deg, white, #80c7f2);
 }
+
+

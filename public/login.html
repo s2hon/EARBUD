@@ -9,7 +9,7 @@
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <!-- Compressed JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
 
@@ -20,49 +20,46 @@
     <div class="top-bar">
         <div class="top-bar-left">
             <ul class="dropdown menu navbar" data-dropdown-menu>
-                <div class="menu-text">WELCOME TO EarBud</div>
-                </ul>
-        </div>
-        <div class="top-bar-right">
-            <ul class="menu">
-                <li><input type="text" placeholder="Login to Continue"></li>
-                <li><button id="search-button" class="button">Search</button></li>
+                <div class="menu-text" class="gradient-text">WELCOME TO EarBud</div>
             </ul>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container login-container">
         <div class="row">
-          <h2>Log In</h2>
           <form data-abide novalidate class="login">
             <div data-abide-error class="alert callout" style="display: none;">
               <p><i class="fi-alert"></i> There are some errors in your form.</p>
             </div>
             <div class="grid-container form-group">
-              <div class="grid-x grid-margin-x">
                 <div class="cell small-12">
-                    <label>Email address
-                        <input type="text" placeholder="email@email.com" id="email-input" aria-describedby="example1Hint1" aria-errormessage="example1Error1" required pattern="email">
+                    <h2 class="login-text">Log In</h2>
+                </div>
+                <div class="grid-x grid-margin-x">
+                    <div class="cell small-12">
+                        <label class="email-text">Email address
+                            <input type="text" placeholder="email@email.com" id="email-input" aria-describedby="example1Hint1" aria-errormessage="example1Error1" required pattern="email">
+                            <span class="form-error">
+                            Oops.. something went wrong
+                            </span>
+                        </label>
+                    </div>
+                    <div class="cell small-12">
+                        <label class="password-text">Password
+                        <input type="password" id="password-input" placeholder="EarBud1234" aria-describedby="example1Hint2" aria-errormessage="example1Error2" required >
                         <span class="form-error">
-                        Oops.. something went wrong
+                            OOP something went wrong
                         </span>
-                    </label>
+                        </label>
+                    </div>
+                    <div class="cell small-12">
+                        <button type="submit" class="button btn btn-default">Login</button>
+                    </div>
                 </div>
                 <div class="cell small-12">
-                    <label>Password
-                    <input type="password" id="password-input" placeholder="EarBud1234" aria-describedby="example1Hint2" aria-errormessage="example1Error2" required >
-                    <span class="form-error">
-                        OOP something went wrong
-                    </span>
-                    </label>
+                    <p class="sign-up-text">Or sign up <a href="/signup" style="color: aliceblue;">here</a></p>
                 </div>
-              <button type="submit" class="button btn btn-default">Login</button>
             </form>
-        </div>
-        <div class="row">
-            <div class="cell small-12">
-                <p>Or sign up <a href="/signup">here</a></p>
-            </div>
         </div>
     </div>
 
