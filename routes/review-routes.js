@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
 
-  // app.get("/api/review", function(req, res) {
+  // app.get("/api/reviews", function(req, res) {
   //   var query = {};
   //   if (req.query.author_id) {
   //     query.AuthorId = req.query.author_id;
@@ -17,7 +17,7 @@ module.exports = function(app) {
   // });
 
   // Get route for retrieving a single review
-  app.get("/api/review/:id", function(req, res) {
+  app.get("/api/reviews/:id", function(req, res) {
     // 2. Add a join here to include the Author who wrote the Post
     db.Review.findOne({
       where: {
@@ -31,14 +31,14 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new review
-  app.post("/api/review", function(req, res) {
+  app.post("/api/reviews", function(req, res) {
     db.Review.create(req.body).then(function(dbPost) {
       res.json(dbPost);
     });
   });
 
   // DELETE route for deleting review
-  app.delete("/api/review/:id", function(req, res) {
+  app.delete("/api/reviews/:id", function(req, res) {
     db.Review.destroy({
       where: {
         id: req.params.id
@@ -49,7 +49,7 @@ module.exports = function(app) {
   });
 
   // PUT route for updating review
-  app.put("/api/review", function(req, res) {
+  app.put("/api/reviews", function(req, res) {
     db.Review.update(
       req.body,
       {

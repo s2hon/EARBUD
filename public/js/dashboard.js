@@ -2,7 +2,7 @@ $(document).ready(function () {
     $.get("/api/user_data").then(function (data) {
         $(".user-name").text(data.username);
     });
-    $.get("/api/review").then(function (data) {
+    $.get("/api/reviews").then(function (data) {
         for (var i = 0; i < data.id; i++) {
             $("#actualReview").append(`
 <div> Review Of: ${data.song} <br>
