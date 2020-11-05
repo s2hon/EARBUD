@@ -41,16 +41,17 @@ module.exports = function(app) {
   });
 
   //review function
-  app.post("/api/reviews", function(req, res) {
+  app.post("/api/review", function(req, res) {
     console.log('hello');
     console.log(req.body);
+
     db.Review.create({
         song: req.body.song,
         artist: req.body.artist,
         album: req.body.album,
         body: req.body.body,
         rating: req.body.rating,
-        author: req.body.author
+        author: req.body.author.toString()
     })
       .then(function() {
         res.json({ success: true })
@@ -58,5 +59,21 @@ module.exports = function(app) {
       .catch(function(err) {
         res.status(401).json(err);
       });
+  });
+
+  // Route for getting review data to be used client side
+  app.get("/api/review", function(req, res) {
+    if (!req.review) {
+      res.json({});
+    } else {
+      res.json({
+        song: req.review.song,
+        artist: req.review.artist,
+        album: req.review.album,
+        body: req.review.body,
+        rating: req.review.rating,
+        author: req.review.author
+      });
+    }
   });
 };
