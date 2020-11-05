@@ -72,56 +72,57 @@
     </div>
 
     <footer>
-        <!-- review pane bar -->
-            <button class="button float-right" type="button" data-toggle="example-dropdown">Review <i class="fas fa-plus-square"></i> </button>
-            <div class="dropdown-pane" data-position="top" data-alignment="right" id="example-dropdown" data-dropdown data-auto-focus="true">
-            <form id="review">
-                <div class="grid-container">
-                <div class="grid-x grid-margin-x">
-                    <div class="cell medium">
-                        <label for="title">Song:</label>
-                        <input placeholder="Post Song Title" type="text" class="form-control" id="title">
-                    </div>
-                    <div class="cell medium">
-                        <label for="artist">Artist:</label>
-                        <input placeholder="Post Song Artist" type="text" class="form-control" id="artist">
-                    </div>
-                    <div class="cell medium">
-                        <label for="album">Album:</label>
-                        <input placeholder="Post Song Album" type="text" class="form-control" id="album">
-                    </div>
-                    <div class="cell medium">
-                        <label for="body">Body:</label>
-                        <textarea placeholder="Post Body" class="form-control" rows="10" id="body"></textarea>
-                    </div>
-                    <div class="cell medium">
-                        <label>Rating
-                            <select id="rating">
-                                <option value="1">I want to be deaf</option>
-                                <option value="2">Unspeakable</option>
-                                <option value="3">Utterly Horrible</option>
-                                <option value="4">Uncomfortable</option>
-                                <option value="5">Distracting</option>
-                                <option value="6">Background Noise</option>
-                                <option value="7">eh.. Tolerable</option>
-                                <option value="8">In my playlist</option>
-                                <option value="9">I can listen to it everyday</option> 
-                            </select>
-                          </label>
-                    </div>
-                    <div class="cell medium form-group">
-                        <label for="category">Select Author:
-                            <select id="author">
-                              <option value="0">anonymous</option>
-                            </select>
+    <!-- review pane bar -->
+        <button class="button float-right" type="button" data-toggle="example-dropdown-top-right">Review <i class="fas fa-plus-square"></i> </button>
+        <div class="dropdown-pane bottom" data-position="left" data-alignment="bottom" id="example-dropdown-top-right" data-dropdown data-auto-focus="true">
+        <form id="review">
+            <div class="grid-container">
+            <div class="grid-x grid-margin-x">
+                <div class="cell medium">
+                    <label for="title">Song:</label>
+                    <input placeholder="Post Song Title" type="text" class="form-control" id="title">
+                </div>
+                <div class="cell medium">
+                    <label for="artist">Artist:</label>
+                    <input placeholder="Post Song Artist" type="text" class="form-control" id="artist">
+                </div>
+                <div class="cell medium">
+                    <label for="album">Album:</label>
+                    <input placeholder="Post Song Album" type="text" class="form-control" id="album">
+                </div>
+                <div class="cell medium">
+                    <label for="body">Body:</label>
+                    <textarea placeholder="Post Body" class="form-control" rows="10" id="body"></textarea>
+                </div>
+                <div class="cell medium">
+                    <label>Rating
+                        <select id="rating">
+                            <option value="1">I want to be deaf</option>
+                            <option value="2">Unspeakable</option>
+                            <option value="3">Utterly Horrible</option>
+                            <option value="4">Uncomfortable</option>
+                            <option value="5">Distracting</option>
+                            <option value="6">Background Noise</option>
+                            <option value="7">eh.. Tolerable</option>
+                            <option value="8">In my playlist</option>
+                            <option value="9">I can listen to it everyday</option> 
+                            <option value="10">freakin' AWESOME</option>
+                        </select>
                         </label>
-                    </div>
-                    <button type="submit" id="popupbtn" class="button btn btn-default">Submit</button>
                 </div>
+                <div class="cell medium form-group">
+                    <label for="category">Select Author:
+                        <select id="author">
+                            <option value="0">anonymous</option>
+                        </select>
+                    </label>
                 </div>
-            </form>
+                <button type="submit" id="popupbtn" class="button btn btn-default">Submit</button>
             </div>
-        </footer>
+            </div>
+        </form>
+        </div>
+    </footer>
     
         
     <script>
