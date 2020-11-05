@@ -6,7 +6,7 @@ $(document).ready(function(){
 // let songs = [];
 
 function searchMusic(song) {
-    var apiKey = "3a62f7eb84bb3fe25640af56e798b7da"
+    var apiKey = "379d5eee38064926b660938445715694"
     var queryURL = "https://api.spotify.com/v1/search" + song + apiKey;
 
     //ajax call

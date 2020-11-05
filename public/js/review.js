@@ -13,7 +13,7 @@ $(document).ready(function() {
         $("#author").append("<option value='1'>"+data.username+"</option>");
     });
 
-    $("#review").on("submit", handleFormSubmit);
+    $("form.review").on("submit", handleFormSubmit);
 
     // A function for handling what happens when the form to create a new post is submitted
     function handleFormSubmit(event) {
@@ -32,7 +32,7 @@ $(document).ready(function() {
             return;
         }
 
-        submitPost(newPost.song, newPost.artist, newPost.album, newPost.body, newPost.rating, newPost.author);
+        submitPost(newPost);
         titleInput.val("");
         artistInput.val("");
         albumInput.val("");
@@ -41,15 +41,24 @@ $(document).ready(function() {
         authorSelect.val("0");
     }
 
-function submitPost(song, artist, album, body, rating, author) {
-    console.log('hello2');
-    $.post("/api/reviews", {
-        song: song,
-        artist: artist,
-        album: album,
-        body: body,
-        rating: rating,
-        author: author
-      })
-}
+    function submitPost(newPost) {
+        console.log('hello');
+        $.post("/api/review", {
+            song: newPost.song,
+            artist: newPost.artist,
+            album: newPost.album,
+            body: newPost.body,
+            rating: newPost.rating,
+            author: newPost.author
+        }).then(function(data) {
+            $("form.review").foundation('close');
+
+        })
+        .catch(handleSubmitErr);
+    }
+
+    function handleSubmitErr(err) {
+        $(".fi-alert").text(err.responseJSON);
+        $(".fi-alert").fadeIn(500);
+    }
 });

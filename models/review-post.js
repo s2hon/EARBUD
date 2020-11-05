@@ -4,8 +4,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                min: 1,
-                max: 255,
+                len:[1,255],
                 notNull: {
                     msg: 'Please enter the song title'
                 }
@@ -15,8 +14,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                min: 1,
-                max: 255,
+                len:[1,255],
                 notNull: {
                     msg: 'Please enter the artist'
                 }
@@ -26,8 +24,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
-                min: 1,
-                max: 255
+                len:[1,255]
             }
         },
         body: {
@@ -42,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
         rating: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            len: [1],
+            max:1,
             validate: {
                 notNull: {
                     msg: 'Please rate the song'
