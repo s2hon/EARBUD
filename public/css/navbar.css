@@ -22,3 +22,27 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+.login-text {
+    font-family: 'orbitron', sans-serif;
+}
+
+.email-text {
+    font-family: 'orbitron', sans-serif;
+}
+
+.password-text {
+    font-family: 'orbitron', sans-serif;
+}
+
+.sign-up-text {
+    font-family: 'orbitron', sans-serif;
+}
+
+.login-container {
+    background-image: linear-gradient(180deg, white, #80c7f2);
+}
+
+#review {
+    background-image: linear-gradient(180deg, white, #80c7f2);
+}
