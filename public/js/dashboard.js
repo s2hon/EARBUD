@@ -4,13 +4,14 @@ $(document).ready(function () {
     });
 
     $.get("/api/review_data").then(function (data) {
-        for (var i = 0; i < data.id; i++) {
+        console.log(data);
+        for (var i = 0; i < data.length; i++) {
             $("#actualReview").append(`
-            <div id="review.${data.id}"> Review Of: ${data.song} <br>
-            Artist: ${data.artist} <br>
-            Review By: ${data.author} <br>
-            Review: ${data.body} <br>
-            Rating: ${data.rating} <br>
+            <div id="review.${data.id}"> 
+            <u>Review Of</u>: ${data[i].song} <br>
+            <u>Artist</u>: ${data[i].artist} <br>
+            <u>Review</u>: ${data[i].body} <br>
+            <u>Rating</u>: ${data[i].rating} out of 9 <br>
             <button id="edit-button" class="button">edit <i class="far fa-edit"></i></button>
             <button id="delete-button" class="button">delete <i class="fas fa-trash"></i></button>
             </div>
