@@ -43,7 +43,7 @@ $(document).ready(function() {
 
 function submitPost(song, artist, album, body, rating, author) {
     console.log('hello2');
-    $.post("/api/reviews", {
+    $.post("/api/review", {
         song: song,
         artist: artist,
         album: album,
