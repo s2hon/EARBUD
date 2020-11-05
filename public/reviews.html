@@ -21,10 +21,12 @@
         <div class="top-bar-left">
             <ul class="dropdown menu navbar" data-dropdown-menu>
                 <div class="menu-text">EarBud</div>
+
                 <li><a href="/">Home</a></li>
                 <li><a href="/">Dashboard</a></li>
                 <li><a href="/reviews">Reviews</a></li>
                 <li><a href="/search">Search</a></li>
+
               </ul>
         </div>
     </div>
@@ -54,7 +56,7 @@
                 </div>
                 <div class="cell medium">
                     <label>Rating
-                        <select>
+                        <select id="rating">
                             <option value="1">I want to be deaf</option>
                             <option value="2">Unspeakable</option>
                             <option value="3">Utterly Horrible</option>
@@ -74,7 +76,7 @@
                         </select>
                     </label>
                 </div>
-                <button type="submit" class="button btn btn-success submit">Submit</button>
+                <button type="submit" id="popupbtn" class="button btn btn-default">Submit</button>
             </div>
             </div>
         </form>

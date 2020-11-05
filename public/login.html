@@ -20,43 +20,46 @@
     <div class="top-bar">
         <div class="top-bar-left">
             <ul class="dropdown menu navbar" data-dropdown-menu>
-                <div class="menu-text">WELCOME TO EarBud</div>
-                </ul>
+                <div class="menu-text" class="gradient-text">WELCOME TO EarBud</div>
+            </ul>
         </div>
     </div>
 
     <div class="container login-container">
         <div class="row">
-          <h2 class="login-text">Log In</h2>
           <form data-abide novalidate class="login">
             <div data-abide-error class="alert callout" style="display: none;">
               <p><i class="fi-alert"></i> There are some errors in your form.</p>
             </div>
             <div class="grid-container form-group">
-              <div class="grid-x grid-margin-x">
                 <div class="cell small-12">
-                    <label class="email-text">Email address
-                        <input type="text" placeholder="email@email.com" id="email-input" aria-describedby="example1Hint1" aria-errormessage="example1Error1" required pattern="email">
+                    <h2 class="login-text">Log In</h2>
+                </div>
+                <div class="grid-x grid-margin-x">
+                    <div class="cell small-12">
+                        <label class="email-text">Email address
+                            <input type="text" placeholder="email@email.com" id="email-input" aria-describedby="example1Hint1" aria-errormessage="example1Error1" required pattern="email">
+                            <span class="form-error">
+                            Oops.. something went wrong
+                            </span>
+                        </label>
+                    </div>
+                    <div class="cell small-12">
+                        <label class="password-text">Password
+                        <input type="password" id="password-input" placeholder="EarBud1234" aria-describedby="example1Hint2" aria-errormessage="example1Error2" required >
                         <span class="form-error">
-                        Oops.. something went wrong
+                            OOP something went wrong
                         </span>
-                    </label>
+                        </label>
+                    </div>
+                    <div class="cell small-12">
+                        <button type="submit" class="button btn btn-default">Login</button>
+                    </div>
                 </div>
                 <div class="cell small-12">
-                    <label class="password-text">Password
-                    <input type="password" id="password-input" placeholder="EarBud1234" aria-describedby="example1Hint2" aria-errormessage="example1Error2" required >
-                    <span class="form-error">
-                        OOP something went wrong
-                    </span>
-                    </label>
+                    <p class="sign-up-text">Or sign up <a href="/signup" style="color: aliceblue;">here</a></p>
                 </div>
-              <button type="submit" class="button btn btn-default">Login</button>
             </form>
-        </div>
-        <div class="row">
-            <div class="cell small-12">
-                <p class="sign-up-text">Or sign up <a href="/signup">here</a></p>
-            </div>
         </div>
     </div>
 
