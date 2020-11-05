@@ -2,43 +2,45 @@
 var db = require("../models");
 var passport = require("../config/passport");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Login
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.json(req.user)      
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+    res.json(req.user)
   });
 
-  app.post("/api/signup", function(req, res) {
+  app.post("/api/signup", function (req, res) {
     db.User.create({
       email: req.body.email,
       password: req.body.password,
       username: req.body.username
     })
-      .then(function() {
+      .then(function () {
         res.redirect(307, "/");
       })
-      .catch(function(err) {
+      .catch(function (err) {
         res.status(401).json(err);
       });
   });
 
-  app.get("/logout", function(req, res) {
+  app.get("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
   });
 
-  // Route for getting some data about our user to be used client side
-  // app.get("/api/user_data", function(req, res) {
-  //   db.User.findOne({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   })
-  //   .then(function(dbReviews) {
-  //     console.log(dbReviews);
-  //     res.json(dbReviews);
-  //   })
-  // });
+  // Route for getting some data about our signed in user
+  app.get("/api/user_data", function(req, res) {
+    db.User.findOne({
+      where: {
+        email: req.user.email,
+        password: req.user.password
+      }
+    })
+    .then(function(dbReviews) {
+      console.log(dbReviews);
+      res.json(dbReviews);
+    })
+  });
+
 
   //review function
   app.post("/api/review", function(req, res) {
@@ -81,4 +83,6 @@ module.exports = function(app) {
       res.json(dbReviews);
     })
   });
+
+
 };

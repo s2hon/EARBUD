@@ -23,7 +23,8 @@ $(document).ready(function() {
       passwordInput.val("");
       usernameInput.val("");
       $("input#password-input2").val("");
-      res.redirect("/");
+    })    .then(function() {
+      res.redirect(307, "/");
     });
   
     // Does a post to the signup route. If successful, we are redirected to the members page
