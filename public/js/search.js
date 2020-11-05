@@ -1,14 +1,39 @@
 
 $(document).ready(function(){
 
-const songList = document.getElementById('songList');
+// const songList = document.getElementById('songList');
 // const searchBar = document.getElementById('search-button');
-let songs = [];
+// let songs = [];
+
+function searchMusic(song) {
+    var apiKey = "3a62f7eb84bb3fe25640af56e798b7da"
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + song + "&units=imperial&appid=" + apiKey;
+
+    //ajax call
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        // console.log(citySearch);
+        console.log(response);
+        $(".song-results").append(`
+        <ul class="song-info">
+        <li class="title">${response.name}</li>
+        <li class="album"></li>
+        <li class="artist"></li>
+    </ul>
+        `)
+
+    })
+}
 
 $("#search-button").on("click", (data) => {
     // const searchString = data.target.value.toLowerCase();
-    const response = $(".search-bar").val();
-    console.log(response);
+    const songName = $(".search-bar").val();
+    console.log(songName);
+
+
 
     //pass response to li on search.html
 
@@ -22,6 +47,7 @@ $("#search-button").on("click", (data) => {
     // });
     // console.log("search button clicked")
     // displaySongs(filteredSongs);
+    searchMusic(songName);
 })
  
 
@@ -53,4 +79,4 @@ $("#search-button").on("click", (data) => {
 // };
  
 // loadSongs();
-});
+})
