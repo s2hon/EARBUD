@@ -12,7 +12,7 @@ $(document).ready(function () {
             <u>Song</u>: ${data[i].song} <br>
             <u>Artist</u>: ${data[i].artist} <br>
             <u>Review</u>: ${data[i].body} <br>
-            <u>Rating</u>: ${data[i].rating} out of 9 <br>
+            <u>Rating</u>: ${data[i].rating} out of 10 <br>
             <button id="edit-button" class="button">edit <i class="far fa-edit"></i></button>
             <button id="delete-button" class="button">delete <i class="fas fa-trash"></i></button>
             </div>
