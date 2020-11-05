@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <!-- Compressed JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
@@ -49,81 +50,87 @@
 
     <div class="grid-x">
         <div class="cell small-1 medium-1 large-1"></div>
-            <div class="cell small-4 medium-4 large-4">
-                <h3>my saved songs</h3>
-                <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique adipisci, molestiae nobis
-                    rem
-                    expedita corporis in ducimus quibusdam aspernatur, eos beatae ex voluptas dolorem vero, sint unde
-                    alias
-                    consectetur explicabo?Eius praesentium ea, itaque temporibus officia esse tempora autem laboriosam
-                    inventore at unde commodi vel porro, possimus harum dicta rerum explicabo adipisci incidunt nisi.
-                    Repudiandae modi animi qui nesciunt! Assumenda.
-                </article>
-            </div>
+        <div class="cell small-10 medium-10 large-10">
+            <h3>my saved songs</h3>
+            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique adipisci, molestiae nobis
+                rem
+                expedita corporis in ducimus quibusdam aspernatur, eos beatae ex voluptas dolorem vero, sint unde
+                alias
+                consectetur explicabo?Eius praesentium ea, itaque temporibus officia esse tempora autem laboriosam
+                inventore at unde commodi vel porro, possimus harum dicta rerum explicabo adipisci incidunt nisi.
+                Repudiandae modi animi qui nesciunt! Assumenda.
+            </article>
+        </div>
+        <div class="cell small-1 medium-1 large-1"></div>
+
         
-            <div class="cell small-2 medium-2 large-2"></div>
-            <div class="cell small-4 medium-4 large-4">
-                <h3>my reviews</h3>
-                <article id="actualReview">
-                </article>
-            </div>
-            <div class="cell small-1 medium-1 large-1"></div>
-        
+
+    </div>
+    <div class="grid-x">
+        <div class="cell small-1 medium-1 large-1"></div>
+        <div class="cell small-10 medium-10 large-10">
+            <h3>my reviews</h3>
+            <article id="actualReview" class="grid-x">
+            </article>
+        </div>
+        <div class="cell small-1 medium-1 large-1"></div>
     </div>
 
     <footer>
         <!-- review pane bar -->
-            <button class="button float-right" type="button" data-toggle="example-dropdown">Review <i class="fas fa-plus-square"></i> </button>
-            <div class="dropdown-pane" data-position="top" data-alignment="right" id="example-dropdown" data-dropdown data-auto-focus="true">
+        <button class="button float-right" type="button" data-toggle="example-dropdown">Review <i
+                class="fas fa-plus-square"></i> </button>
+        <div class="dropdown-pane" data-position="top" data-alignment="right" id="example-dropdown" data-dropdown
+            data-auto-focus="true">
             <form id="review">
                 <div class="grid-container">
-                <div class="grid-x grid-margin-x">
-                    <div class="cell medium">
-                        <label for="title">Song:</label>
-                        <input placeholder="Post Song Title" type="text" class="form-control" id="title">
+                    <div class="grid-x grid-margin-x">
+                        <div class="cell medium">
+                            <label for="title">Song:</label>
+                            <input placeholder="Post Song Title" type="text" class="form-control" id="title">
+                        </div>
+                        <div class="cell medium">
+                            <label for="artist">Artist:</label>
+                            <input placeholder="Post Song Artist" type="text" class="form-control" id="artist">
+                        </div>
+                        <div class="cell medium">
+                            <label for="album">Album:</label>
+                            <input placeholder="Post Song Album" type="text" class="form-control" id="album">
+                        </div>
+                        <div class="cell medium">
+                            <label for="body">Body:</label>
+                            <textarea placeholder="Post Body" class="form-control" rows="10" id="body"></textarea>
+                        </div>
+                        <div class="cell medium">
+                            <label>Rating
+                                <select id="rating">
+                                    <option value="1">I want to be deaf</option>
+                                    <option value="2">Unspeakable</option>
+                                    <option value="3">Utterly Horrible</option>
+                                    <option value="4">Uncomfortable</option>
+                                    <option value="5">Distracting</option>
+                                    <option value="6">Background Noise</option>
+                                    <option value="7">eh.. Tolerable</option>
+                                    <option value="8">In my playlist</option>
+                                    <option value="9">I can listen to it everyday</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="cell medium form-group">
+                            <label for="category">Select Author:
+                                <select id="author">
+                                    <option value="0">anonymous</option>
+                                </select>
+                            </label>
+                        </div>
+                        <button type="submit" id="popupbtn" class="button btn btn-default">Submit</button>
                     </div>
-                    <div class="cell medium">
-                        <label for="artist">Artist:</label>
-                        <input placeholder="Post Song Artist" type="text" class="form-control" id="artist">
-                    </div>
-                    <div class="cell medium">
-                        <label for="album">Album:</label>
-                        <input placeholder="Post Song Album" type="text" class="form-control" id="album">
-                    </div>
-                    <div class="cell medium">
-                        <label for="body">Body:</label>
-                        <textarea placeholder="Post Body" class="form-control" rows="10" id="body"></textarea>
-                    </div>
-                    <div class="cell medium">
-                        <label>Rating
-                            <select id="rating">
-                                <option value="1">I want to be deaf</option>
-                                <option value="2">Unspeakable</option>
-                                <option value="3">Utterly Horrible</option>
-                                <option value="4">Uncomfortable</option>
-                                <option value="5">Distracting</option>
-                                <option value="6">Background Noise</option>
-                                <option value="7">eh.. Tolerable</option>
-                                <option value="8">In my playlist</option>
-                                <option value="9">I can listen to it everyday</option> 
-                            </select>
-                          </label>
-                    </div>
-                    <div class="cell medium form-group">
-                        <label for="category">Select Author:
-                            <select id="author">
-                              <option value="0">anonymous</option>
-                            </select>
-                        </label>
-                    </div>
-                    <button type="submit" id="popupbtn" class="button btn btn-default">Submit</button>
-                </div>
                 </div>
             </form>
-            </div>
-        </footer>
-    
-        
+        </div>
+    </footer>
+
+
     <script>
         $(document).foundation();
     </script>
