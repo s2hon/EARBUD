@@ -27,18 +27,19 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
-  // Route for getting some data about our user to be used client side
-  // app.get("/api/user_data", function(req, res) {
-  //   db.User.findOne({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   })
-  //   .then(function(dbReviews) {
-  //     console.log(dbReviews);
-  //     res.json(dbReviews);
-  //   })
-  // });
+  // Route for getting some data about our signed in user
+  app.get("/api/user_data", function(req, res) {
+    db.User.findOne({
+      where: {
+        email: req.user.email,
+        password: req.user.password
+      }
+    })
+    .then(function(dbReviews) {
+      console.log(dbReviews);
+      res.json(dbReviews);
+    })
+  });
 
   // Route for getting review data to be used client side
   app.get("/api/review", function (req, res) {
