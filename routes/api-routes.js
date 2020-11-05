@@ -28,35 +28,57 @@ module.exports = function(app) {
   });
 
   // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", function(req, res) {
-    if (!req.user) {
-      res.json({});
-    } else {
-      res.json({
-        email: req.user.email,
-        id: req.user.id,
-        username: req.user.username
-      });
-    }
-  });
+  // app.get("/api/user_data", function(req, res) {
+  //   db.User.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   })
+  //   .then(function(dbReviews) {
+  //     console.log(dbReviews);
+  //     res.json(dbReviews);
+  //   })
+  // });
 
   //review function
-  app.post("/api/reviews", function(req, res) {
-    console.log('hello');
+  app.post("/api/review", function(req, res) {
     console.log(req.body);
+    console.log('hello');
     db.Review.create({
         song: req.body.song,
         artist: req.body.artist,
         album: req.body.album,
         body: req.body.body,
         rating: req.body.rating,
-        author: req.body.author
+        author: req.body.author.toString()
     })
-      .then(function() {
-        res.json({ success: true })
-      })
-      .catch(function(err) {
-        res.status(401).json(err);
-      });
+    .then(function() {
+      res.redirect(307, "/");
+    })
+    .catch(function(err) {
+      console.log(err);
+      res.status(401).json(err);
+    });
+  });
+
+  app.get("/api/review/:id", function(req, res) {
+    // 2. Add a join here to include the Author who wrote the Post
+    db.Review.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbPost) {
+      console.log(dbPost);
+      res.json(dbPost);
+    });
+  });
+
+  // Route for getting review data to be used client side
+  app.get("/api/review_data", function(req, res) {
+    db.Review.findAll({})
+    .then(function(dbReviews) {
+      console.log(dbReviews);
+      res.json(dbReviews);
+    })
   });
 };

@@ -3,7 +3,7 @@ $(document).ready(function () {
         $(".user-name").text(data.username);
     });
 
-    $.get("/api/reviews").then(function (data) {
+    $.get("/api/review_data").then(function (data) {
         for (var i = 0; i < data.id; i++) {
             $("#actualReview").append(`
             <div id="review.${data.id}"> Review Of: ${data.song} <br>

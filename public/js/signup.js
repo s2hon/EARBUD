@@ -34,8 +34,8 @@ $(document).ready(function() {
         password: password,
         username: username
       })
-        .then(function(data) {
-          window.location.replace("/");
+        .then(function(req,res) {
+          res.redirect(307, "/");
         })
         .catch(handleLoginErr);
     }
