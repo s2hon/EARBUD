@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 function searchMusic(song) {
     var apiKey = "3a62f7eb84bb3fe25640af56e798b7da"
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + song + "&units=imperial&appid=" + apiKey;
+    var queryURL = "https://api.spotify.com/v1/search" + song + apiKey;
 
     //ajax call
 
