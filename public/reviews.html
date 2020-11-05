@@ -25,6 +25,8 @@
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="#">Reviews</a></li>
                 <li><a href="search.html">Search History</a></li>
+                <li><a href="/logout">Logout</a></li>
+                
               </ul>
         </div>
         <div class="top-bar-right">
@@ -60,7 +62,7 @@
                 </div>
                 <div class="cell medium">
                     <label>Rating
-                        <select>
+                        <select id="rating">
                             <option value="1">I want to be deaf</option>
                             <option value="2">Unspeakable</option>
                             <option value="3">Utterly Horrible</option>
@@ -80,7 +82,7 @@
                         </select>
                     </label>
                 </div>
-                <button type="submit" class="button btn btn-success submit">Submit</button>
+                <button type="submit" id="popupbtn" class="button btn btn-default">Submit</button>
             </div>
             </div>
         </form>

@@ -42,14 +42,19 @@ module.exports = function(app) {
 
   //review function
   app.post("/api/reviews", function(req, res) {
+    console.log('hello');
+    console.log(req.body);
     db.Review.create({
-        song: req.body.title,
+        song: req.body.song,
         artist: req.body.artist,
         album: req.body.album,
         body: req.body.body,
-        rating: req.body.rating.value,
+        rating: req.body.rating,
         author: req.body.author
     })
+      .then(function() {
+        res.json({ success: true })
+      })
       .catch(function(err) {
         res.status(401).json(err);
       });
