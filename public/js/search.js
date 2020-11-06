@@ -1,83 +1,152 @@
+require("dotenv").config();
+const keys = require("../../keys")
+const fs = require('fs')
+const Spotify = require('node-spotify-api')
+var spotify = new Spotify(keys.spotify)
+let moment = require('moment')
+const request = require('request')
+const chalk = require('chalk')
+let args = process.argv.slice(2)
+let choice = args[0]
+let searchTerm = args[1]
 
 $(document).ready(function(){
 
-// const songList = document.getElementById('songList');
-// const searchBar = document.getElementById('search-button');
-// let songs = [];
 
-function searchMusic(track) {
-    var apiKey = "379d5eee38064926b660938445715694"
-    var queryURL = "https://api.spotify.com/v1/search" + track + apiKey;
+function spotifyThis() {
 
-    //ajax call
+    if (searchTerm === undefined) {
+        let searchTerm = "never gonna give you up"
+        spotify.search({
+            type: 'track',
+            query: searchTerm,
+            limit: 5
+        }, function (err, data) {
+            if (err) {
+                return console.log('Error occurred: ' + err);
+            } else {
+                let song = data.tracks.items
+                for (i = 0; i < song.length; i++) {
+                    console.log(chalk.white.bgGreen("Artist: ") + chalk.green.bold(song[i].album.artists[0].name))
+                    console.log(chalk.white.bgGreen("Song: ") + chalk.green.bold(song[i].name))
+                    console.log(chalk.white.bgGreen("Preview: ") + chalk.green.bold(song[i].preview_url))
+                    console.log(chalk.white.bgGreen("Album: ") + chalk.green.bold(song[i].album.name))
+                    console.log("\n--------------------------------")
+                }
+            }
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        // console.log(citySearch);
-        console.log(response);
-        $(".song-results").append(`
-        <ul class="song-info">
-        <li class="title">${response.name}</li>
-        <li class="album"></li>
-        <li class="artist"></li>
-    </ul>
-        `)
+        })
+    } else {
+        spotify.search({
+            type: 'track',
+            query: searchTerm,
+            limit: 5
+        }, function (err, data) {
+            if (err) {
+                return console.log('Error occurred: ' + err);
+            } else {
+                let song = data.tracks.items
+                for (i = 0; i < song.length; i++) {
+                    console.log(chalk.white.bgGreen("Artist: ") + chalk.green.bold(song[i].album.artists[0].name))
+                    console.log(chalk.white.bgGreen("Song: ") + chalk.green.bold(song[i].name))
+                    console.log(chalk.white.bgGreen("Preview: ") + chalk.green.bold(song[i].preview_url))
+                    console.log(chalk.white.bgGreen("Album: ") + chalk.green.bold(song[i].album.name))
+                    console.log("\n--------------------------------")
+                }
+            }
+        });
+    }
+
+}
+
+
+function doWhat() {
+    fs.readFile("random.txt", "utf8", function (err, data) {
+        if (err) {
+            return console.log(err)
+        }
+
+        let input = data.split(",")
+        let choice = input[0]
+        let searchTerm = input[1]
+        spotify.search({
+            type: 'track',
+            query: searchTerm,
+            limit: 5
+        }, function (err, data) {
+            if (err) {
+                return console.log('Error occurred: ' + err);
+            } else {
+                let song = data.tracks.items
+                for (i = 0; i < song.length; i++) {
+                    console.log(chalk.white.bgGreen("Artist: ") + chalk.green.bold(song[i].album.artists[0].name))
+                    console.log(chalk.white.bgGreen("Song: ") + chalk.green.bold(song[i].name))
+                    console.log(chalk.white.bgGreen("Preview: ") + chalk.green.bold(song[i].preview_url))
+                    console.log(chalk.white.bgGreen("Album: ") + chalk.green.bold(song[i].album.name))
+                    console.log("\n--------------------------------")
+                }
+            }
+
+        })
+
+
 
     })
 }
 
-$("#search-button").on("click", (event) => {
-    // const searchString = data.target.value.toLowerCase();
-    event.preventDefault();
-    const searchTerm = $(".search-bar").val();
-    console.log(searchTerm);
+function doSomething() {
 
+    if (choice === "spotify-this") {
+        spotifyThis()
+     } else if (choice === "do-what-it-says") {
+        doWhat()
+     }
+   
+}
+doSomething();
 
-
-    //pass response to li on search.html
-
- 
-    // const filteredSongs = songs.filter((character) => {
-    //     return (
-    //         song.name.toLowercase().includes(searchString)
-    //         ||
-    //         song.album.toLowerCase().includes(searchString)
-    //     );
-    // });
-    // console.log("search button clicked")
-    // displaySongs(filteredSongs);
-    searchMusic(searchTerm);
-})
- 
-
-// const loadSongs = async () => {
-//     try {
-//         const res = await fetch('https://developer.spotify.com/documentation/web-api/');
-//         let songs = await res.json();
-//         displaySongs(songs);
-//         console.log(songs);
-//     } catch (err) {
-//         console.error(err);
+// function searchMusic() {
+    
+//     //ajax call
+//     var accessToken = SPOTIFY_SECRET;
+// $.ajax({
+//     url: 'https://api.spotify.com/v1/search/q?='+searchTerm,
+//     type: 'GET',
+//     headers: {
+//         'Authorization' : 'Bearer ' + accessToken
+//     },
+//     success: function(data) {
+//         $(".song-results").append(`
+//         <ul class="song-info">
+//         <li style= color; "white" class="title">${response.track}</li>
+//         <li class="album"></li>
+//         <li class="artist"></li>
+//     </ul>
+//         `)
+//         console.log(data);
 //     }
- 
-// };
- 
-// const displaySongs = (songs) => {
-//     const htmlString = songs
-//     .map((song) => {
-//         return `
-//         <li class='character>
-//         <h2>${song.name}</h2>
-//         <p>Album: ${song.album}</p>
-//         <img src="${album.image}"</img>
-//         </li>
-//         `;
-//         })
-//         .join('');
-//         songList.innerHTML = htmlString;
-// };
- 
-// loadSongs();
+// });
+    
+
+// $("#search-button").on("click", (event) => {
+//     // const searchString = data.target.value.toLowerCase();
+//     event.preventDefault();
+//     searchMusic();
+//     const searchTerm = $(".search-bar").val();
+//     if (searchTerm === undefined) {
+//         let searchTerm = "never gonna give you up"
+//         spotify.search({
+//             type: 'track',
+//             query: searchTerm,
+//             limit: 5
+//         }, function (err, data) {
+//             if (err) {
+//                 return console.log('Error occurred: ' + err);
+//             }
+
+//     searchMusic(searchTerm);
+// })
+//     }
+// });
+// }
 })
