@@ -25,9 +25,18 @@ $(document).ready(function(){
         })        
         .then(function(res) {
             console.log(res);
-            console.log("success")
+            console.log("success");
+            for (var i = 0; i < res.length; i++) {
+            $(".song-results").append(`
+            <div class="cell small-4 medium-4 large-4">
+            <b style = "color: #1bf2cb">Song: ${res[i].song}</b><br>
+            artist: ${res[i].artist}<br>
+            album: ${res[i].album}<br>
+            </div>`)
+            }
             // If there's an error, log the error
           })
+    
           .catch(function(err) {
             console.log(err);
           });
