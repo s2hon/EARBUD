@@ -1,7 +1,13 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-const spotify = require("../controllers/search");
+// const spotify = require("../controllers/search");
+const Spotify = require('node-spotify-api')
+const login = {
+  id: process.env.SPOTIFY_ID,
+  secret: process.env.SPOTIFY_SECRET
+    }
+var spotify = new Spotify(login)
 
 module.exports = function (app) {
   // Login
@@ -10,7 +16,7 @@ module.exports = function (app) {
   });
 
   app.post("/api/signup", function (req, res) {
-    db.User.create({
+    db.User.create({ 
       email: req.body.email,
       password: req.body.password,
       username: req.body.username
@@ -86,10 +92,32 @@ module.exports = function (app) {
   });
 
   app.get("/api/search", function(req, res) {
-    console.log(req.query.term);
     let searchTerm = req.query.term;
-    console.log(spotify.doSomething(searchTerm));
-    res.json(spotify.doSomething(searchTerm));
+    let songCollect = [];
+          spotify.search({
+              type: 'track',
+              query: searchTerm,
+              limit: 5
+          }, function (err, data) {
+              // console.log(err + "with search term");
+              // console.log(data.tracks + "with search term");
+              let song = data.tracks.items;
+              // console.log(song);
+              song.map(songs => {
+                  const searchResults = {
+                      artist: songs.album.artists[0].name,
+                      song: songs.name,
+                      album: songs.album.name
+                  }
+                  songCollect.push(searchResults);
+              })
+              console.log(songCollect);
+              res.json(songCollect);
+
+          })
+      // }
+  
+  // }
   });
 
   // DELETE route for deleting posts
