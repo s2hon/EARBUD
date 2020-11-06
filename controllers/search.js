@@ -1,3 +1,4 @@
+<<<<<<< HEAD:public/js/search.js
 require("dotenv").config({path: './.env'});
 const keys = require("../../keys")
 const fs = require('fs')
@@ -6,17 +7,35 @@ var spotify = new Spotify(keys.spotify)
 let moment = require('moment')
 const request = require('request')
 const chalk = require('chalk')
+=======
+require("dotenv").config()
+const keys = require("../keys");
+const fs = require('fs');
+var Spotify = require('spotify-web-api-js');
+const spotify = new Spotify(keys.spotify);
+const chalk = require('chalk');
+>>>>>>> f83839e10a798a9fdaf93b54784bd3a5ba596814:controllers/search.js
 let args = process.argv.slice(2)
 let choice = args[0]
-let searchTerm = args[1]
 
-$(document).ready(function(){
+exports.doSomething = function (searchTerm) {
+    return new doSomething(searchTerm);
+}
+
+function doSomething(searchTerm) {
+
+    if (choice === "spotify-this") {
+        return spotifyThis(searchTerm)
+     } else if (choice === "do-what-it-says") {
+        return doWhat(searchTerm)
+     }
+   
+}
 
 
-function spotifyThis() {
-
+function spotifyThis(searchTerm){
     if (searchTerm === undefined) {
-        let searchTerm = "never gonna give you up"
+        searchTerm = "never gonna give you up";
         spotify.search({
             type: 'track',
             query: searchTerm,
@@ -34,7 +53,6 @@ function spotifyThis() {
                     console.log("\n--------------------------------")
                 }
             }
-
         })
     } else {
         spotify.search({
@@ -60,15 +78,15 @@ function spotifyThis() {
 }
 
 
-function doWhat() {
+function doWhat(searchTerm) {
     fs.readFile("random.txt", "utf8", function (err, data) {
         if (err) {
             return console.log(err)
         }
-
+        else{
         let input = data.split(",")
         let choice = input[0]
-        let searchTerm = input[1]
+        let searchTerm = searchTerm
         spotify.search({
             type: 'track',
             query: searchTerm,
@@ -89,64 +107,8 @@ function doWhat() {
 
         })
 
-
+      }
 
     })
 }
 
-function doSomething() {
-
-    if (choice === "spotify-this") {
-        spotifyThis()
-     } else if (choice === "do-what-it-says") {
-        doWhat()
-     }
-   
-}
-doSomething();
-
-// function searchMusic() {
-    
-//     //ajax call
-//     var accessToken = SPOTIFY_SECRET;
-// $.ajax({
-//     url: 'https://api.spotify.com/v1/search/q?='+searchTerm,
-//     type: 'GET',
-//     headers: {
-//         'Authorization' : 'Bearer ' + accessToken
-//     },
-//     success: function(data) {
-//         $(".song-results").append(`
-//         <ul class="song-info">
-//         <li style= color; "white" class="title">${response.track}</li>
-//         <li class="album"></li>
-//         <li class="artist"></li>
-//     </ul>
-//         `)
-//         console.log(data);
-//     }
-// });
-    
-
-// $("#search-button").on("click", (event) => {
-//     // const searchString = data.target.value.toLowerCase();
-//     event.preventDefault();
-//     searchMusic();
-//     const searchTerm = $(".search-bar").val();
-//     if (searchTerm === undefined) {
-//         let searchTerm = "never gonna give you up"
-//         spotify.search({
-//             type: 'track',
-//             query: searchTerm,
-//             limit: 5
-//         }, function (err, data) {
-//             if (err) {
-//                 return console.log('Error occurred: ' + err);
-//             }
-
-//     searchMusic(searchTerm);
-// })
-//     }
-// });
-// }
-})
