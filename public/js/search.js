@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({path: './.env'});
 const keys = require("../../keys")
 const fs = require('fs')
 const Spotify = require('node-spotify-api')
