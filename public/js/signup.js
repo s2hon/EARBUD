@@ -23,7 +23,7 @@ $(document).ready(function() {
       passwordInput.val("");
       usernameInput.val("");
       $("input#password-input2").val("");
-    })    .then(function() {
+    }).then(function() {
       res.redirect(307, "/");
     });
   
