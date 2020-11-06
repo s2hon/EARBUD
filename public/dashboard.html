@@ -38,24 +38,23 @@
                 <li><a href="search.html">Search</a></li>
             </ul>
         </div>
-        <div class="top-bar-right">
-            <ul class="menu">
-                <li><input class="search-bar" type="text" placeholder="search here" /> </li>
-                <li><button id="search-button" class="button">Search</button></li>
-            </ul>
-        </div>
     </div>
 
     
 
-    <div class="row">
+    <div class="row" id="welcome">
         <div class="cell">
-            <h2>Welcome <span class="user-name"></span></h2>
+            <h2>Welcome <span class="user-name" style="color: #bd21bf"></span></h2>
         </div>
     </div>
-    <
 
+ 
     <!-- <div class="grid-x">
+
+    
+    <hr size="6" width="60%" style="color: #b080f2">  
+
+    <div class="grid-x" id="fav">
         <div class="cell small-1 medium-1 large-1"></div>
         <div class="cell small-10 medium-10 large-10">
             <h3>my saved songs</h3>
@@ -70,9 +69,10 @@
         </div>
         <div class="cell small-1 medium-1 large-1"></div>
 
-        
+        <hr size="6" width="60%" style="color: #b080f2">  
 
     </div> -->
+
     <div class="grid-x">
         <div class="cell small-1 medium-1 large-1"></div>
         <div class="cell small-10 medium-10 large-10">
@@ -85,9 +85,9 @@
 
     <footer>
     <!-- review pane bar -->
-        <button class="button float-right" type="button" data-toggle="example-dropdown-top-right">Review <i class="fas fa-plus-square"></i> </button>
+        <button class="button reviewbar" type="button" data-toggle="example-dropdown-top-right">Review <i class="fas fa-plus-square"></i> </button>
         <div class="dropdown-pane bottom" data-position="left" data-alignment="bottom" id="example-dropdown-top-right" data-dropdown data-auto-focus="true">
-        <form class="review">
+        <form class="review" id="element">
             <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell medium">
@@ -139,7 +139,8 @@
     <script>
         $(document).foundation();
     </script>
-    <script type="text/javascript" src="./js/review.js"></script>
+    <script>$(document).foundation();</script>
+    <script type="text/javascript" src="./js/search2.js"></script>
     <script type="text/javascript" src="./js/dashboard.js"></script>
 
 </body>
