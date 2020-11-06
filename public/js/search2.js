@@ -13,7 +13,7 @@ $(document).ready(function(){
         else {
             $(".search-bar").attr("placeholder", "you must type in something");
         }
-
+ 
         passSearch(searchTerm);
         $(".search-bar").val("");
     }
