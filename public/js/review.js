@@ -42,7 +42,6 @@ $(document).ready(function() {
     }
 
     function submitPost(newPost) {
-        console.log('hello');
         $.post("/api/review", {
             song: newPost.song,
             artist: newPost.artist,

@@ -120,5 +120,15 @@ module.exports = function (app) {
   // }
   });
 
+  // DELETE route for deleting posts
+  app.delete("/api/review/:id", function(req, res) {
+    db.Review.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  })
 
 };
