@@ -28,8 +28,9 @@ function searchMusic(song) {
     })
 }
 
-$("#search-button").on("click", (data) => {
+$("#search-button").on("click", (event) => {
     // const searchString = data.target.value.toLowerCase();
+    event.preventDefault();
     const songName = $(".search-bar").val();
     console.log(songName);
 
