@@ -5,9 +5,9 @@ $(document).ready(function(){
 // const searchBar = document.getElementById('search-button');
 // let songs = [];
 
-function searchMusic(song) {
+function searchMusic(track) {
     var apiKey = "379d5eee38064926b660938445715694"
-    var queryURL = "https://api.spotify.com/v1/search" + song + apiKey;
+    var queryURL = "https://api.spotify.com/v1/search" + track + apiKey;
 
     //ajax call
 
@@ -31,8 +31,8 @@ function searchMusic(song) {
 $("#search-button").on("click", (event) => {
     // const searchString = data.target.value.toLowerCase();
     event.preventDefault();
-    const songName = $(".search-bar").val();
-    console.log(songName);
+    const searchTerm = $(".search-bar").val();
+    console.log(searchTerm);
 
 
 
@@ -48,7 +48,7 @@ $("#search-button").on("click", (event) => {
     // });
     // console.log("search button clicked")
     // displaySongs(filteredSongs);
-    searchMusic(songName);
+    searchMusic(searchTerm);
 })
  
 
