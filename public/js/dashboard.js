@@ -56,6 +56,8 @@ $(document).ready(function () {
             bodyInput.val("");
             ratingSelect.val("1");
             authorSelect.val("0");
+            new Foundation.Reveal($("#element")).close(); 
+            location.reload();
         }
     
         function submitPost(newPost) {
@@ -67,7 +69,7 @@ $(document).ready(function () {
                 rating: newPost.rating,
                 author: newPost.author
             }).then(function(data) {
-                $("form.review").foundation('close');
+                // $("form.review").foundation('close');
     
             })
             .catch(handleSubmitErr);
