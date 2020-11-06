@@ -16,11 +16,27 @@
     padding: 2rem;
 }
 
-@include dropdown-container;
+#welcome {
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+#fav {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
 
 form.signup,
 form.login {
   margin-top: 50px;
+}
+
+.reviewbar
+{
+    right: 0%;
+    position: fixed;
+    top: 90%;
 }
 
 .login-text {
