@@ -3,7 +3,6 @@ const keys = require("../keys");
 const fs = require('fs');
 var Spotify = require('spotify-web-api-js');
 const spotify = new Spotify(keys.spotify);
-const chalk = require('chalk');
 let args = process.argv.slice(2)
 let choice = args[0]
 
@@ -35,7 +34,7 @@ function spotifyThis(searchTerm){
             } else {
                 let song = data.tracks.items
                 for (i = 0; i < song.length; i++) {
-                    console.log(chalk.white.bgGreen("Artist: ") + chalk.green.bold(song[i].album.artists[0].name))
+                    "Artist: " + song[i].album.artists[0].name,
                     console.log(chalk.white.bgGreen("Song: ") + chalk.green.bold(song[i].name))
                     console.log(chalk.white.bgGreen("Preview: ") + chalk.green.bold(song[i].preview_url))
                     console.log(chalk.white.bgGreen("Album: ") + chalk.green.bold(song[i].album.name))

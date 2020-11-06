@@ -92,5 +92,15 @@ module.exports = function (app) {
     res.json(spotify.doSomething(searchTerm));
   });
 
+  // DELETE route for deleting posts
+  app.delete("/api/review/:id", function(req, res) {
+    db.Review.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  })
 
 };
