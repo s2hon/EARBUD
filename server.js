@@ -1,6 +1,5 @@
 const express = require("express");
 const session = require("express-session");
-const path = require("path");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 

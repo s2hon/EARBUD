@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models");
-var passport = require("../config/passport");
+const db = require("../models");
+const passport = require("../config/passport");
+const spotify = require("../controllers/search");
 
 module.exports = function (app) {
   // Login
@@ -82,6 +83,13 @@ module.exports = function (app) {
       console.log(dbReviews);
       res.json(dbReviews);
     })
+  });
+
+  app.get("/api/search", function(req, res) {
+    console.log(req.query.term);
+    let searchTerm = req.query.term;
+    console.log(spotify.doSomething(searchTerm));
+    res.json(spotify.doSomething(searchTerm));
   });
 
 

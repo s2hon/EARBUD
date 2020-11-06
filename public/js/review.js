@@ -18,7 +18,7 @@ $(document).ready(function() {
     // A function for handling what happens when the form to create a new post is submitted
     function handleFormSubmit(event) {
         event.preventDefault();
-        var newPost = {
+        let newPost = {
             song: titleInput.val().trim(),
             artist: artistInput.val().trim(),
             album: albumInput.val().trim(),
