@@ -23,6 +23,14 @@ When installing Earbud, an NPM should be run for the dependencies, a SQL db need
 ## Usage
 EarBud is designed for personal usage as an entertainment/social product, a way for users to create their own reviews to the music that speaks to them.  Or, conversely, to vent about music for which they have strong negative feelings.
 
+## Installation
+To clone our whole project, git fork and/or clone the repo. Initialize with 
+
+    npm install
+
+## Usage
+https://earbudteam8.herokuapp.com
+
 ## Contributors
 Staci Shon [github user s2hon](https://github.com/s2hon)
 Isaac Arnold [github user ikethe4](https://github.com/ikethe4)
@@ -34,3 +42,10 @@ EJ Kenelly [github user ejkennelly](https://github.com/ejkennelly)
 [The Login page](./screenshots/login.png)
 
 [An example of the dashboard](./screenshots/dashboard.png)
+
+
+## Github Repo
+https://github.com/s2hon/EARBUD
+
+## License
+MIT © Staci Shon 
